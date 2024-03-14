@@ -52,7 +52,7 @@ jobs:
         run: |
           # 1. Retrieve existing bot comments for the PR
           comments=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.sha }}/comments")
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.client_payload.pull_request.number }}/comments")
 
           botCommentId=$(echo "$comments" | jq -r '.[] | select(.user.login == "github-actions[bot]" and .body | contains("Terraform Format and Style")) | .id')
 
@@ -83,5 +83,5 @@ jobs:
             curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Content-Type: application/json" \
               -d "{\"body\":\"$output\"}" \
-              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.sha }}/comments"
+              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.client_payload.pull_request.number }}/comments"
           fi
