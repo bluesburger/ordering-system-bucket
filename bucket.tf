@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "odering-system-bbS3"
+  bucket = "odering-system-bbs3"
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
