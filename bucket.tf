@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "odering-system-bbs3"
+  bucket = "ordering-system-blues-burguer-prod"
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
