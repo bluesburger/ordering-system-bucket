@@ -18,6 +18,6 @@ Processo de configuração da infraestrutura na AWS. Abaixo está um guia rápid
 - Execute a infra
 
 Para documentação completa 
-[repositório](https://github.com/bluesburger/readme)
+[clique aqui ](https://github.com/bluesburger/readme)
 
 Este README fornece uma visão geral para montar a infraestrutura.
